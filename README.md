@@ -72,3 +72,5 @@ https://github.com/user-attachments/assets/45a4139d-10ee-40f3-bd1b-c84c405c7567
 * Dataset used to train the model: <a href="https://universe.roboflow.com/jdr/fanalyzer">
     <img src="https://app.roboflow.com/images/download-dataset-badge.svg"></img>
 </a>
+
+* Input videos to test the program: [Videos](https://drive.google.com/drive/folders/1ri9C1hUYbR8SheorBhSU-AROBmGcR0VT?usp=sharing)
