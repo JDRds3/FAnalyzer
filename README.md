@@ -48,16 +48,18 @@ https://github.com/user-attachments/assets/45a4139d-10ee-40f3-bd1b-c84c405c7567
 4. Run the Web API to start processing videos.
 
    * From the root of the project, open a terminal and run the following commands:
-   ```bash
-      cd src/app/
-      python app.py
-   ```
-6. Run the html demo to interact with the API:
-    * In a new terminal, from the root of the project, run the following commands:
+     
      ```bash
-        cd src/api-demo/
-        python -m http.server
+        cd src/app/
+        python app.py
      ```
+6. Run the HTML demo to interact with the API:
+    * In a new terminal, from the root of the project, run the following commands:
+      
+         ```bash
+            cd src/api-demo/
+            python -m http.server
+         ```
      * Open the demo through the following link: http://127.0.0.1:8000/index.html
   
      ![Demo](https://github.com/user-attachments/assets/3b8a73e6-b816-4733-adeb-e2dd27d1c5d6)
