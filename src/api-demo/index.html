@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Upload</title>
+    <style>
+        #loadingSpinner {
+            display: none;
+            border: 16px solid #f3f3f3; 
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Video for Processing</h1>
+    <form id="uploadForm">
+        <label for="videoFile">Select Video:</label>
+        <input type="file" id="videoFile" name="video" accept="video/*" required><br><br>
+
+        <label for="modelPath">Select Model:</label>
+        <select id="modelPath" name="model_path" required>
+            
+        </select><br><br>
+
+        <label for="outputName">Output Name:</label>
+        <input type="text" id="outputName" name="output_name" value="output_video.mp4" required><br><br>
+
+        <button type="submit">Upload</button>
+    </form>
+
+    <div id="loadingSpinner"></div>
+
+    <h2>Processed Video</h2>
+    <a id="downloadLink" href="#" download="processed_video.mp4" style="display: none;">Download Video</a>
+
+    <script>
+        async function fetchModelFiles() {
+            try {
+                const response = await fetch('http://127.0.0.1:5000/models');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch model files');
+                }
+                const models = await response.json();
+                const modelPathSelect = document.getElementById('modelPath');
+                models.forEach(model => {
+                    const option = document.createElement('option');
+                    option.value = `../models/${model}`;
+                    option.textContent = model;
+                    modelPathSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error fetching model files:', error);
+                alert('Failed to load model files');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchModelFiles);
+
+        document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const videoFile = document.getElementById('videoFile').files[0];
+            const modelPath = document.getElementById('modelPath').value;
+            let outputName = document.getElementById('outputName').value;
+
+            if (!outputName.toLowerCase().endsWith('.mp4')) {
+                outputName += '.mp4';
+            }
+
+            const formData = new FormData();
+            formData.append('video', videoFile);
+            formData.append('model_path', modelPath);
+            formData.append('output_name', outputName);
+
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            loadingSpinner.style.display = 'block';
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/process_video', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    throw new Error(`Network response was not ok: ${errorText}`);
+                }
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+
+                const downloadLink = document.getElementById('downloadLink');
+                downloadLink.href = url;
+                downloadLink.style.display = 'block';
+                downloadLink.download = outputName;
+
+            } catch (error) {
+                console.error('Error:', error);
+                alert(`Failed to process the video: ${error.message}`);
+            } finally {
+                loadingSpinner.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
