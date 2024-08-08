@@ -21,3 +21,12 @@ https://github.com/user-attachments/assets/45a4139d-10ee-40f3-bd1b-c84c405c7567
 * Possession Calculation: Computes possession statistics by determining which team has control of the ball over the duration of the video.
 
 * Web Interface: Provides an easy-to-use web interface for uploading videos and retrieving processed results.
+
+
+## Usage 
+
+1. Clone the repository
+2. Create a virtual environment and install the dependencies.
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    pip install -r requirements.txt
