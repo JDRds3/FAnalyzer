@@ -32,3 +32,15 @@ https://github.com/user-attachments/assets/45a4139d-10ee-40f3-bd1b-c84c405c7567
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     pip install -r requirements.txt
    ```
+3.Add the Object Detection Model
+
+    * Move or Add the Model:
+    Place your object detection model file into the src/models/ directory of your project.
+    
+    * Download the Example Model:
+    If you need the model used in the example video, you can download it from the following link:
+    
+    [Download Object Detection Model](https://drive.google.com/drive/folders/1KNSjqteQnTNeltk6nBjQqVgs3SPqppGF?usp=sharing)
+    
+    * Model File Location:
+    Ensure that the model file is located in src/models/ and named 'best.pt'
