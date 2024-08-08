@@ -1,6 +1,6 @@
 # Football Computer Vision Project: Football Video Analysis
 
-This program employs computer vision techniques to analyze football videos. The program track players, referees, the ball, and automatically detects teams by color, while also estimating possession metrics. It uses the following technologies: OpenCV for video processing, YOLO (You Only Look Once) for object detection, ByteTrack for object tracking, and Flask for the web interface and API.
+This program employs computer vision techniques to analyze football videos. The program tracks players, referees, the ball, and automatically detects teams by color, while also estimating possession metrics. It uses the following technologies: OpenCV for video processing, YOLO (You Only Look Once) for object detection, ByteTrack for object tracking, and Flask for the web interface and API.
 
 
 
