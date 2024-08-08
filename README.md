@@ -64,4 +64,11 @@ https://github.com/user-attachments/assets/45a4139d-10ee-40f3-bd1b-c84c405c7567
   
      ![Demo](https://github.com/user-attachments/assets/3b8a73e6-b816-4733-adeb-e2dd27d1c5d6)
 
-   
+
+7. Provide the inputs and receive the processed video!
+
+## Extras 
+
+* Dataset used to train the model: <a href="https://universe.roboflow.com/jdr/fanalyzer">
+    <img src="https://app.roboflow.com/images/download-dataset-badge.svg"></img>
+</a>
