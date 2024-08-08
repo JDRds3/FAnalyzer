@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/45a4139d-10ee-40f3-bd1b-c84c405c7567
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     pip install -r requirements.txt
    ```
-3.Add the Object Detection Model
+3. Add the Object Detection Model
 
     * Move or Add the Model:
     Place your object detection model file into the src/models/ directory of your project.
