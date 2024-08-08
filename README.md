@@ -14,6 +14,10 @@ https://github.com/user-attachments/assets/45a4139d-10ee-40f3-bd1b-c84c405c7567
 
 * Object Tracking: Utilizes ByteTrack to maintain the identities of players, referees, and the ball across video frames.
 
+* Color-Based Team Segmentation: Utilizes K-means clustering to differentiate between two teams based on player colors.
+  
+* Inertia for Accuracy: Employs a historical record (with inertia) to improve team assignment stability and reduce errors.
+
 * Possession Calculation: Computes possession statistics by determining which team has control of the ball over the duration of the video.
 
 * Web Interface: Provides an easy-to-use web interface for uploading videos and retrieving processed results.
