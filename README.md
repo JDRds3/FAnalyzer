@@ -40,7 +40,25 @@ https://github.com/user-attachments/assets/45a4139d-10ee-40f3-bd1b-c84c405c7567
       [Download Object Detection Model](https://drive.google.com/drive/folders/1KNSjqteQnTNeltk6nBjQqVgs3SPqppGF?usp=sharing)
 
    * Move or Add the Model:
-    Place the object detection model file in the src/models/ directory of the project.
+    Place the object detection model file inside the src/models/ directory of the project.
     
     * Model File Location:
-    Ensure that the model file is located in src/models/ and named 'best.pt'
+    Ensure that the model file is located in src/models/ and is named 'best.pt'
+
+4. Run the Web API to start processing videos
+   From the root of the project open a terminal and run the following commands:
+   ```bash
+      cd src/app/
+      python app.py
+   ```
+5. Run the html demo to interact with the API:
+  In a new terminal, from the root of the project, run the following commands:
+   ```bash
+      cd src/api-demo/
+      python -m http.server
+   ```
+   Open the demo through the following link: http://127.0.0.1:8000/index.html
+
+   ![Demo](https://github.com/user-attachments/assets/3b8a73e6-b816-4733-adeb-e2dd27d1c5d6)
+
+   
